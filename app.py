@@ -31,7 +31,7 @@ def generate_sql_query(user_query):
     Always SELECT more than necessary column name after understanding the user query. The table name is student_data. 
     Salary package refers to 'Offer value.'"""
 
-    genai.configure(api_key="AIzaSyCXZ1uiMaZnK5mBQPuXd6EOV2IRQxOWHbw")  # Replace with your actual Gemini API Key
+    genai.configure(api_key="YOUR_API_KEY")  # Replace with your actual Gemini API Key
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
     response = model.generate_content(template)
     sql_query_cleaned = response.text.replace('```sql\n', '').replace('\n```', '')
@@ -43,7 +43,7 @@ def generate_response(result_list, user_query):
     If you're provided with any data, use the data to frame the answers relevant to the user query. Try to frame a sentence with the least data you have.
     Always say "Thanks for asking!" at the end of the answer."""
 
-    genai.configure(api_key="AIzaSyCXZ1uiMaZnK5mBQPuXd6EOV2IRQxOWHbw")  # Replace with your actual Gemini API Key
+    genai.configure(api_key="YOUR_API_KEY")  # Replace with your actual Gemini API Key
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
     response = model.generate_content(template)
     return response.text
